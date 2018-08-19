@@ -4,9 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.text.DecimalFormat;
 
 public class RedesController {
 	private String so;
+	private Process pro;
+	private InputStream fluxo;
+	private InputStreamReader leitor; 
+	private BufferedReader buffer;
+	private String linha;
 	
 	public RedesController() {
 		super();
@@ -29,11 +35,11 @@ public class RedesController {
 			ipv4 = "inet addr";
 		}
 		try {
-			Process pro = Runtime.getRuntime().exec(path);
-			InputStream fluxo = pro.getInputStream();
-			InputStreamReader leitor = new InputStreamReader(fluxo); 
-			BufferedReader buffer = new BufferedReader(leitor);
-			String linha = buffer.readLine();
+			pro = Runtime.getRuntime().exec(path);
+			fluxo = pro.getInputStream();
+			leitor = new InputStreamReader(fluxo); 
+			buffer = new BufferedReader(leitor);
+			linha = buffer.readLine();
 			texto.append("");
 			while(linha != null) {
 				if(so.contains("Windows")) {
@@ -45,6 +51,41 @@ public class RedesController {
 				linha = buffer.readLine();
 			}
 			System.out.println(texto.toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void ping() {
+		String path = "";
+		double tempoMedioPing = 0.0, ms = 0.0;
+		int cont = 0;
+		if(so.contains("Windows")) {
+			path = "ping -n 10 www.google.com.br";
+		}else
+		if(so.contains("Linux")) {
+			path = "ping -c 10 www.google.com.br";
+		}
+		try {
+			pro = Runtime.getRuntime().exec(path);
+			fluxo = pro.getInputStream();
+			leitor = new InputStreamReader(fluxo); 
+			buffer = new BufferedReader(leitor);
+			linha = buffer.readLine();
+			while(linha != null) {
+				if(linha.contains("tempo=") || linha.contains("time=")) {
+					ms = Double.parseDouble(linha.substring(
+							(linha.lastIndexOf("=")+1), (linha.length()-3)));
+					cont++;
+					System.out.println("Resposta "+cont+" = "+ms+"ms.");
+					tempoMedioPing += ms;
+				}
+				linha = buffer.readLine();
+			}
+			tempoMedioPing /= cont;
+			DecimalFormat formato = new DecimalFormat("#.##");
+			System.out.println("Tempo médio de PING = "+formato.format(tempoMedioPing)+"ms.");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
