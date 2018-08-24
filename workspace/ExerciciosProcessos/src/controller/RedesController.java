@@ -50,7 +50,9 @@ public class RedesController {
 				}
 				linha = buffer.readLine();
 			}
-			System.out.println(texto.toString());
+			if(texto.toString().contains(adaptador) && texto.toString().contains(ipv4)){
+				System.out.println(texto.toString());
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -76,7 +78,7 @@ public class RedesController {
 			while(linha != null) {
 				if(linha.contains("tempo=") || linha.contains("time=")) {
 					ms = Double.parseDouble(linha.substring(
-							(linha.lastIndexOf("=")+1), (linha.length()-3)));
+						(linha.lastIndexOf("tempo=")+6), (linha.lastIndexOf("m"))));
 					cont++;
 					System.out.println("Resposta "+cont+" = "+ms+"ms.");
 					tempoMedioPing += ms;
