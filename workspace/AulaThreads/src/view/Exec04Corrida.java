@@ -52,7 +52,7 @@ public class Exec04Corrida extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		ImageIcon carro = new ImageIcon("F:\\Dados_Fatec\\Sistemas Operacionais I\\workspace\\imgs\\camaro_2d.png");
+		ImageIcon carro = new ImageIcon("camaro_2d.png");
 		carro.setImage(carro.getImage().getScaledInstance(50, 30, 100));
 		JLabel lblCarro = new JLabel(carro);
 		lblCarro.setForeground(Color.RED);
@@ -60,9 +60,9 @@ public class Exec04Corrida extends JFrame {
 		lblCarro.setBounds(72, 57, 77, 34);
 		contentPane.add(lblCarro);
 		
-		ImageIcon carro2 = new ImageIcon("F:\\Dados_Fatec\\Sistemas Operacionais I\\workspace\\imgs\\carro_vermelho_2d.png");
-		carro2.setImage(carro2.getImage().getScaledInstance(50, 30, 100));
-		JLabel lblCarro_2 = new JLabel(carro2);
+		ImageIcon carro_2 = new ImageIcon("carro_vermelho_2d.png");
+		carro_2.setImage(carro_2.getImage().getScaledInstance(50, 30, 100));
+		JLabel lblCarro_2 = new JLabel(carro_2);
 		lblCarro_2.setForeground(Color.BLUE);
 		lblCarro_2.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblCarro_2.setBounds(72, 115, 77, 34);
@@ -80,11 +80,11 @@ public class Exec04Corrida extends JFrame {
 				lblCarro_2.setBounds(38, 115, 77, 34);
 				txtPerdedor.setText("");
 				txtVencedor.setText("");
-				int vl = 50;
+				int vl = 60;
 				btnCorrer.setVisible(false);
 				Thread carro1 = new CarroThread(lblCarro, getWidth(), vl, txtVencedor, txtPerdedor, "Carro 1", btnCorrer);
-				carro1.start();
 				Thread carro2 = new CarroThread(lblCarro_2, getWidth(), vl, txtVencedor, txtPerdedor, "Carro 2", btnCorrer);
+				carro1.start();
 				carro2.start();
 			}
 		});

@@ -15,6 +15,7 @@ public class CarroThread extends Thread{
 	private JTextField perd;
 	private String nome;
 	private JButton btnCorrer;
+	public String rival;
 	
 	public CarroThread(JLabel lblCarro, int dstMax, int vlMax, JTextField vencedor, JTextField perdedor, String nome, JButton btnCorrer) {
 		this.lblCarro = lblCarro;
@@ -29,6 +30,7 @@ public class CarroThread extends Thread{
 	public void run() {
 		correr();
 	}
+	
 	
 	public void correr() {
 		Rectangle percurso = lblCarro.getBounds();
@@ -49,9 +51,13 @@ public class CarroThread extends Thread{
 			percurso = lblCarro.getBounds();
 		}
 		if(venc.getText().isEmpty()) {
-			venc.setText(nome);
-		}else {
-			perd.setText(nome);
+			if(nome.equals("Carro 1")) {
+				venc.setText(nome);
+				perd.setText("Carro 2");
+			}else {
+				venc.setText(nome);
+				perd.setText("Carro 1");
+			}
 			btnCorrer.setVisible(true);
 		}
 	}
