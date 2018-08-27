@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JSeparator;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.MouseAdapter;
@@ -45,34 +46,38 @@ public class Exec04Corrida extends JFrame {
 	 */
 	public Exec04Corrida() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 527, 378);
+		setBounds(100, 100, 567, 378);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblCarro = new JLabel("Carro_1");
+		ImageIcon carro = new ImageIcon("F:\\Dados_Fatec\\Sistemas Operacionais I\\workspace\\imgs\\camaro_2d.png");
+		carro.setImage(carro.getImage().getScaledInstance(50, 30, 100));
+		JLabel lblCarro = new JLabel(carro);
 		lblCarro.setForeground(Color.RED);
 		lblCarro.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblCarro.setBounds(38, 75, 77, 16);
+		lblCarro.setBounds(72, 57, 77, 34);
 		contentPane.add(lblCarro);
 		
-		JLabel lblCarro_2 = new JLabel("Carro_2");
+		ImageIcon carro2 = new ImageIcon("F:\\Dados_Fatec\\Sistemas Operacionais I\\workspace\\imgs\\carro_vermelho_2d.png");
+		carro2.setImage(carro2.getImage().getScaledInstance(50, 30, 100));
+		JLabel lblCarro_2 = new JLabel(carro2);
 		lblCarro_2.setForeground(Color.BLUE);
 		lblCarro_2.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblCarro_2.setBounds(38, 115, 77, 16);
+		lblCarro_2.setBounds(72, 115, 77, 34);
 		contentPane.add(lblCarro_2);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(38, 104, 437, 2);
+		separator.setBounds(72, 104, 437, 2);
 		contentPane.add(separator);
 		
 		JButton btnCorrer = new JButton("Correr");
 		btnCorrer.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				lblCarro.setBounds(38, 75, 77, 16);
-				lblCarro_2.setBounds(38, 115, 77, 16);
+				lblCarro.setBounds(38, 57, 77, 34);
+				lblCarro_2.setBounds(38, 115, 77, 34);
 				txtPerdedor.setText("");
 				txtVencedor.setText("");
 				int vl = 50;
@@ -83,29 +88,39 @@ public class Exec04Corrida extends JFrame {
 				carro2.start();
 			}
 		});
-		btnCorrer.setBounds(33, 308, 99, 25);
+		btnCorrer.setBounds(67, 308, 99, 25);
 		contentPane.add(btnCorrer);
 		
 		txtPerdedor = new JTextField();
 		txtPerdedor.setEditable(false);
-		txtPerdedor.setBounds(391, 309, 116, 22);
+		txtPerdedor.setBounds(425, 309, 116, 22);
 		contentPane.add(txtPerdedor);
 		txtPerdedor.setColumns(10);
 		
 		txtVencedor = new JTextField();
 		txtVencedor.setEditable(false);
 		txtVencedor.setColumns(10);
-		txtVencedor.setBounds(391, 274, 116, 22);
+		txtVencedor.setBounds(425, 274, 116, 22);
 		contentPane.add(txtVencedor);
 		
 		JLabel lblVencedor = new JLabel("Vencedor :");
 		lblVencedor.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblVencedor.setBounds(313, 277, 77, 16);
+		lblVencedor.setBounds(347, 277, 77, 16);
 		contentPane.add(lblVencedor);
 		
 		JLabel lblPerdedor = new JLabel("Perdedor :");
 		lblPerdedor.setFont(new Font("Tahoma", Font.BOLD, 13));
-		lblPerdedor.setBounds(313, 312, 77, 16);
+		lblPerdedor.setBounds(347, 312, 77, 16);
 		contentPane.add(lblPerdedor);
+		
+		JLabel lblCarro_1 = new JLabel("Carro 1:");
+		lblCarro_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblCarro_1.setBounds(12, 57, 77, 16);
+		contentPane.add(lblCarro_1);
+		
+		JLabel lblCarro_3 = new JLabel("Carro 2:");
+		lblCarro_3.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblCarro_3.setBounds(12, 115, 77, 16);
+		contentPane.add(lblCarro_3);
 	}
 }
