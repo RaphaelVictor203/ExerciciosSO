@@ -27,7 +27,7 @@ public class ThreadNumeroCN extends Thread{
 	public void rodar() {
 		int numero = 0;
 		int rodadas = (int)((Math.random())*150)+1;
-		int mls = 0;
+		int mls = 10;
 		for(int i=1; i<=rodadas; i++) {
 			numero = (int)((Math.random())*7)+1;
 			txtNumero.setText(Integer.toString(numero));
