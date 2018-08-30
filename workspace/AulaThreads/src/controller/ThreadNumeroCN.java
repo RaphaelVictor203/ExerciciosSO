@@ -28,12 +28,13 @@ public class ThreadNumeroCN extends Thread{
 		int numero = 0;
 		int rodadas = (int)((Math.random())*150)+1;
 		int mls = 10;
+		int vl = 200/rodadas;
 		for(int i=1; i<=rodadas; i++) {
 			numero = (int)((Math.random())*7)+1;
 			txtNumero.setText(Integer.toString(numero));
 			try {
 				sleep(mls);
-				mls += 1;
+				mls += vl;
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
