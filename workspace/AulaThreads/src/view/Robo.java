@@ -20,15 +20,145 @@ public class Robo {
 		try {
 			Robot robozin = new Robot();
 			
-			robozin.mouseMove((d.width - 15), 10);
+			robozin.mouseMove(60, d.height - 10);
+			
+			robozin.delay(100);
+			robozin.setAutoDelay(100);
 			
 			robozin.mousePress(InputEvent.BUTTON1_MASK);
 			robozin.mouseRelease(InputEvent.BUTTON1_MASK);
 			
+			//ESCREVE CMD
+			robozin.keyPress(KeyEvent.VK_C);
+			robozin.keyRelease(KeyEvent.VK_C);
+			
+			robozin.keyPress(KeyEvent.VK_M);
+			robozin.keyRelease(KeyEvent.VK_M);
+			
+			robozin.keyPress(KeyEvent.VK_D);
+			robozin.keyRelease(KeyEvent.VK_D);
+			//FIM
+			
+			
 			robozin.keyPress(KeyEvent.VK_ENTER);
 			robozin.keyRelease(KeyEvent.VK_ENTER);
 			
-			JOptionPane.showMessageDialog(null, "TROLEEEEEEEEEEI :)", "TROLADO!!!", JOptionPane.WARNING_MESSAGE);
+			//ESCREVE START
+			robozin.keyPress(KeyEvent.VK_S);
+			robozin.keyRelease(KeyEvent.VK_S);
+			
+			robozin.keyPress(KeyEvent.VK_T);
+			robozin.keyRelease(KeyEvent.VK_T);
+			
+			robozin.keyPress(KeyEvent.VK_A);
+			robozin.keyRelease(KeyEvent.VK_A);
+			
+			robozin.keyPress(KeyEvent.VK_R);
+			robozin.keyRelease(KeyEvent.VK_R);
+			
+			robozin.keyPress(KeyEvent.VK_T);
+			robozin.keyRelease(KeyEvent.VK_T);
+			//FIM
+			
+			robozin.keyPress(KeyEvent.VK_SPACE);
+			robozin.keyRelease(KeyEvent.VK_SPACE);
+			
+			//ESCREVE FIREFOX
+			robozin.keyPress(KeyEvent.VK_F);
+			robozin.keyRelease(KeyEvent.VK_F);
+			
+			robozin.keyPress(KeyEvent.VK_I);
+			robozin.keyRelease(KeyEvent.VK_I);
+			
+			robozin.keyPress(KeyEvent.VK_R);
+			robozin.keyRelease(KeyEvent.VK_R);
+			
+			robozin.keyPress(KeyEvent.VK_E);
+			robozin.keyRelease(KeyEvent.VK_E);
+			
+			robozin.keyPress(KeyEvent.VK_F);
+			robozin.keyRelease(KeyEvent.VK_F);
+			
+			robozin.keyPress(KeyEvent.VK_O);
+			robozin.keyRelease(KeyEvent.VK_O);
+			
+			robozin.keyPress(KeyEvent.VK_X);
+			robozin.keyRelease(KeyEvent.VK_X);
+			//FIM
+			
+			
+			robozin.keyPress(KeyEvent.VK_SPACE);
+			robozin.keyRelease(KeyEvent.VK_SPACE);
+			
+			
+			//GOOGLE.COM
+			robozin.keyPress(KeyEvent.VK_G);
+			robozin.keyRelease(KeyEvent.VK_G);
+			
+			robozin.keyPress(KeyEvent.VK_O);
+			robozin.keyRelease(KeyEvent.VK_O);
+			
+			robozin.keyPress(KeyEvent.VK_O);
+			robozin.keyRelease(KeyEvent.VK_O);
+			
+			robozin.keyPress(KeyEvent.VK_G);
+			robozin.keyRelease(KeyEvent.VK_G);
+			
+			robozin.keyPress(KeyEvent.VK_L);
+			robozin.keyRelease(KeyEvent.VK_L);
+			
+			robozin.keyPress(KeyEvent.VK_E);
+			robozin.keyRelease(KeyEvent.VK_E);
+			
+			robozin.keyPress(KeyEvent.VK_PERIOD);
+			robozin.keyRelease(KeyEvent.VK_PERIOD);
+			
+			robozin.keyPress(KeyEvent.VK_C);
+			robozin.keyRelease(KeyEvent.VK_C);
+			
+			robozin.keyPress(KeyEvent.VK_O);
+			robozin.keyRelease(KeyEvent.VK_O);
+			
+			robozin.keyPress(KeyEvent.VK_M);
+			robozin.keyRelease(KeyEvent.VK_M);
+			//FIM
+			
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			robozin.keyPress(KeyEvent.VK_ENTER);
+			robozin.keyRelease(KeyEvent.VK_ENTER);
+			
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			//ESCREVE JAVA
+			robozin.keyPress(KeyEvent.VK_J);
+			robozin.keyRelease(KeyEvent.VK_J);
+			
+			robozin.keyPress(KeyEvent.VK_A);
+			robozin.keyRelease(KeyEvent.VK_A);
+			
+			robozin.keyPress(KeyEvent.VK_V);
+			robozin.keyRelease(KeyEvent.VK_V);
+			
+			robozin.keyPress(KeyEvent.VK_A);
+			robozin.keyRelease(KeyEvent.VK_A);
+			
+			robozin.keyPress(KeyEvent.VK_ENTER);
+			robozin.keyRelease(KeyEvent.VK_ENTER);
+			//FIM
+			
+			//JOptionPane.showMessageDialog(null, "TROLEEEEEEEEEEI :)", "TROLADO!!!", JOptionPane.WARNING_MESSAGE);
 			
 		} catch (AWTException e) {
 			// TODO Auto-generated catch block
