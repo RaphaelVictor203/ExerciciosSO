@@ -80,14 +80,14 @@ public class Robo {
 	}
 	
 	private static void writeWord(Robot robo, String word) {
-		int[] letters = retornLetters(word);
+		int[] letters = returnLetters(word);
 		for(int i=0; i<letters.length; i++) {
 			robo.keyPress(letters[i]);
 			robo.keyRelease(letters[i]);
 		}
 	}
 
-	private static int[] retornLetters(String word) {
+	private static int[] returnLetters(String word) {
 		int[] letters = new int[word.length()];
 		for(int i=0; i<word.length(); i++) {
 			letters[i] = (int) word.charAt(i);
