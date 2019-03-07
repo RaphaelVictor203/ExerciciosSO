@@ -41,15 +41,15 @@ public class Robo {
 		
 		timeWait(4000);
 		
-		openCMD();
+		openExec();
 		
-		writeWord(robo, "CMD");
+		writeWord("CMD");
 		
 		enter();
 		
 		timeWait(2000);
 		
-		writeWord(robo, "START " + browser.toUpperCase() + " WWW.GOOGLE.COM");
+		writeWord("START " + browser + " WWW.GOOGLE.COM");
 		
 		timeWait(2000);
 		
@@ -57,7 +57,7 @@ public class Robo {
 		
 		timeWait(5000);
 		
-		writeWord(robo, search.toUpperCase());
+		writeWord(search);
 		
 		enter();
 		
@@ -76,40 +76,40 @@ public class Robo {
 		
 		timeWait(4000);
 		
-		openCMD();
+		openExec();
 		
 		timeWait(2000);
 		
-		writeWord(robo, "CMD");
+		writeWord("CMD");
 		enter();
 
 		timeWait(2000);
 		
-		writeWord(robo, "CD\\");
+		writeWord("CD\\");
 		enter();
 		
 		timeWait(100);
 		
 		String[] dirs = path.split("/");
 		for(int i=0; i<dirs.length; i++) {
-			writeWord(robo, "CD " + dirs[i].toUpperCase());
+			writeWord("CD " + dirs[i]);
 			enter();
 		}
 		
 		timeWait(100);
 		
-		writeWord(robo, "MKDIR " + folderName.toUpperCase());
+		writeWord("MKDIR " + folderName);
 		enter();
 		
 		JOptionPane.showMessageDialog(null, "Pasta criada com sucesso", "CREATE FOLDER", JOptionPane.INFORMATION_MESSAGE);
 		
 	}
 	
-	private static void writeWord(Robot robo, String word) {
-		int[] letters = returnLetters(word);
+	public void writeWord(String word) {
+		int[] letters = returnLetters(word.toUpperCase());
 		for(int i=0; i<letters.length; i++) {
-			robo.keyPress(letters[i]);
-			robo.keyRelease(letters[i]);
+			this.robo.keyPress(letters[i]);
+			this.robo.keyRelease(letters[i]);
 		}
 	}
 
@@ -121,7 +121,7 @@ public class Robo {
 		return letters;
 	}
 	
-	private void timeWait(int milissegundos) {
+	public void timeWait(int milissegundos) {
 		try {
 			Thread.sleep(milissegundos);
 		} catch (InterruptedException e) {
@@ -130,12 +130,12 @@ public class Robo {
 		}
 	}
 	
-	private void enter() {
+	public void enter() {
 		this.robo.keyPress(KeyEvent.VK_ENTER);
 		this.robo.keyRelease(KeyEvent.VK_ENTER);
 	}
 	
-	private void openCMD() {
+	public void openExec() {
 		this.robo.keyPress(KeyEvent.VK_WINDOWS);
 		this.robo.keyPress(KeyEvent.VK_R);
 		this.robo.keyRelease(KeyEvent.VK_WINDOWS);
