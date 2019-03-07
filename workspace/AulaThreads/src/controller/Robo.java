@@ -19,7 +19,9 @@ public class Robo {
 	
 	public Robo() {
 		try {
-			robo = new Robot();
+			this.robo = new Robot();
+			this.robo.delay(100);
+			this.robo.setAutoDelay(100);
 		} catch (AWTException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
