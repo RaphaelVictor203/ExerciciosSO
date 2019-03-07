@@ -66,7 +66,7 @@ public class Robo {
 	}
 	
 	public void createFolder() {
-		String path = JOptionPane.showInputDialog(null, "Insira o caminho absoluto até o local que deseja criar a pasta", "CREATE FOLDER", JOptionPane.INFORMATION_MESSAGE);
+		String path = JOptionPane.showInputDialog(null, "Insira o caminho absoluto até o local que deseja criar a pasta\nEX.: users/yourUser/desktop", "CREATE FOLDER", JOptionPane.INFORMATION_MESSAGE);
 		String folderName = JOptionPane.showInputDialog(null, "Insira o nome da pasta\nOBS.: Caso o nome contenha mais de uma palavra\npor favor separalas com \"-\"", "CREATE FOLDER", JOptionPane.INFORMATION_MESSAGE);
 		
 		JOptionPane.showMessageDialog(null, "Por favor, até o termino da criação da pasta, não aperte nenhum botão ou utilize o mouse.", "AVISO", JOptionPane.WARNING_MESSAGE);
